@@ -1,0 +1,16 @@
+package dev.ruivieira.drools.rules;
+
+import dev.ruivieira.ccfd.routes.model.Prediction;
+
+global dev.ruivieira.ccfd.routes.model.Classification classification;
+
+dialect  "mvel"
+
+rule "Classify transaction"
+
+    when
+        Prediction(probability <= 0.5)
+    then
+        classification.setFraudulent(true);
+end
+
