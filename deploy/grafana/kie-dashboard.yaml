@@ -24,7 +24,7 @@ spec:
       "editable": true,
       "gnetId": null,
       "graphTooltip": 0,
-      "id": 5,
+      "id": 4,
       "links": [],
       "panels": [
         {
@@ -456,7 +456,9 @@ spec:
             {
               "expr": "fraud_approved_low_amount_sum",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 2,
+              "legendFormat": "fraud_approved_low_amount_sum",
               "refId": "A",
               "step": 4
             }
@@ -550,7 +552,9 @@ spec:
             {
               "expr": "rate(fraud_approved_low_amount_sum[5m])",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 2,
+              "legendFormat": "fraud_approved_low_amount_sum rate",
               "refId": "A",
               "step": 4
             }
@@ -795,7 +799,7 @@ spec:
         "list": []
       },
       "time": {
-        "from": "now-5m",
+        "from": "now-30m",
         "to": "now"
       },
       "timepicker": {
