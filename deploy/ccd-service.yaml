@@ -20,6 +20,15 @@ spec:
     activeDeadlineSeconds: 21600
   triggers:
     - type: ConfigChange
+    - type: ImageChange
+      imageChangeParams:
+        automatic: true
+        containerNames:
+          - ccd-service
+        from:
+          kind: ImageStreamTag
+          namespace: ccfd
+          name: 'ccd-service:1.1-CCFD'
   replicas: 1
   revisionHistoryLimit: 10
   test: false
@@ -38,7 +47,7 @@ spec:
     spec:
       containers:
         - name: ccd-service
-          image: ruivieira/ccd-service:1.0-SNAPSHOT
+          image: ccd-service:1.1-CCFD
           ports:
             - containerPort: 8090
               protocol: TCP
