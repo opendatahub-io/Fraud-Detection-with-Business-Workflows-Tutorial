@@ -24,11 +24,13 @@ spec:
       "editable": true,
       "gnetId": null,
       "graphTooltip": 0,
-      "id": 7,
+      "id": 8,
       "links": [],
       "panels": [
         {
           "aliasColors": {
+            "Amount": "dark-green",
+            "Probability of Fraud": "dark-red",
             "proba_1": "#bf1b00"
           },
           "bars": false,
@@ -84,7 +86,7 @@ spec:
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
-              "legendFormat": "proba_1",
+              "legendFormat": "Probability of Fraud",
               "refId": "A",
               "step": 4
             },
@@ -119,10 +121,10 @@ spec:
           "yaxes": [
             {
               "format": "short",
-              "label": null,
+              "label": "",
               "logBase": 1,
-              "max": null,
-              "min": null,
+              "max": "1",
+              "min": "0",
               "show": true
             },
             {
@@ -141,6 +143,8 @@ spec:
         },
         {
           "aliasColors": {
+            "Probability of Fraud": "dark-red",
+            "V17": "blue",
             "proba_1": "#bf1b00"
           },
           "bars": false,
@@ -183,11 +187,7 @@ spec:
           "renderer": "flot",
           "seriesOverrides": [
             {
-              "alias": "Amount",
-              "yaxis": 2
-            },
-            {
-              "alias": "v17",
+              "alias": "V17",
               "yaxis": 2
             }
           ],
@@ -200,7 +200,7 @@ spec:
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
-              "legendFormat": "proba_1",
+              "legendFormat": "Probability of Fraud",
               "refId": "A",
               "step": 4
             },
@@ -237,16 +237,17 @@ spec:
               "format": "short",
               "label": null,
               "logBase": 1,
-              "max": null,
-              "min": null,
+              "max": "1",
+              "min": "0",
               "show": true
             },
             {
+              "decimals": null,
               "format": "short",
               "label": null,
               "logBase": 1,
-              "max": "15",
-              "min": "-15",
+              "max": null,
+              "min": null,
               "show": true
             }
           ],
@@ -257,7 +258,9 @@ spec:
         },
         {
           "aliasColors": {
-            "proba_1": "#bf1b00"
+            "Probability of Fraud": "dark-red",
+            "proba_1": "#bf1b00",
+            "v10": "orange"
           },
           "bars": false,
           "dashLength": 10,
@@ -320,7 +323,7 @@ spec:
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
-              "legendFormat": "proba_1",
+              "legendFormat": "Probability of Fraud",
               "refId": "A",
               "step": 4
             },
@@ -354,19 +357,20 @@ spec:
           },
           "yaxes": [
             {
+              "decimals": null,
               "format": "short",
               "label": null,
               "logBase": 1,
-              "max": null,
-              "min": null,
+              "max": "1",
+              "min": "0",
               "show": true
             },
             {
               "format": "short",
               "label": null,
               "logBase": 1,
-              "max": "5",
-              "min": "-10",
+              "max": null,
+              "min": null,
               "show": true
             }
           ],
@@ -384,7 +388,7 @@ spec:
         "list": []
       },
       "time": {
-        "from": "now-5m",
+        "from": "now-30m",
         "to": "now"
       },
       "timepicker": {
@@ -414,5 +418,5 @@ spec:
       "timezone": "",
       "title": "Model Predictions",
       "uid": "X4QmwK1Mz",
-      "version": 2
+      "version": 1
     }
