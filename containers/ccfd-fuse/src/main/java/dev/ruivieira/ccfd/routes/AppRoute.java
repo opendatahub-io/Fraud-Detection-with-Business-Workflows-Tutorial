@@ -128,11 +128,11 @@ public class AppRoute extends RouteBuilder {
                 .when(header("fraudulent").isEqualTo(true))
                 .marshal(new JacksonDataFormat())
                 .to("micrometer:counter:transaction.outgoing?increment=1&tags=type=fraud")
-                .to(KIE_SERVER_URL + "/rest/server/containers/ccd-fraud-kjar-1_0-SNAPSHOT/processes/ccd-fraud-kjar.CCDProcess/instances")
+                .to(KIE_SERVER_URL + "/rest/server/containers/ccd-fraud-kjar-1_1-CCFD/processes/ccd-fraud-kjar.CCDProcess/instances")
                 .otherwise()
                 .marshal(new JacksonDataFormat())
                 .to("micrometer:counter:transaction.outgoing?increment=1&tags=type=standard")
-                .to(KIE_SERVER_URL + "/rest/server/containers/ccd-fraud-kjar-1_0-SNAPSHOT/processes/ccd-fraud-kjar.CCDProcess/instances");
+                .to(KIE_SERVER_URL + "/rest/server/containers/ccd-fraud-kjar-1_1-CCFD/processes/ccd-fraud-kjar.CCDProcess/instances");
 
         from("kafka:" + CUSTOMER_NOTIFICATION_TOPIC + "?brokers=" + BROKER_URL).routeId("customerIncoming")
                 .log("${body}")
@@ -150,6 +150,6 @@ public class AppRoute extends RouteBuilder {
                 .marshal(new JacksonDataFormat())
                 .log("${body}")
                 .to("micrometer:counter:notifications.incoming?increment=1&tags=response=${header.response}")
-                .toD(KIE_SERVER_URL + "/rest/server/containers/ccd-fraud-kjar-1_0-SNAPSHOT/processes/instances/${header.processId}/signal/customerAcknowledgement");
+                .toD(KIE_SERVER_URL + "/rest/server/containers/ccd-fraud-kjar-1_1-CCFD/processes/instances/${header.processId}/signal/customerAcknowledgement");
     }
 }

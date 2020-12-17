@@ -21,7 +21,7 @@
   </configuration>
   <containers>
     <container>
-      <containerId>ccd-fraud-kjar-1_0-SNAPSHOT</containerId>
+      <containerId>ccd-fraud-kjar-1_1-CCFD</containerId>
       <releaseId>
         <groupId>dev.ruivieira</groupId>
         <artifactId>ccd-fraud-kjar</artifactId>
@@ -57,7 +57,7 @@
       <containerAlias>ccd-fraud-kjar</containerAlias>
     </container>
     <container>
-      <containerId>ccd-standard-kjar-1_0-SNAPSHOT</containerId>
+      <containerId>ccd-standard-kjar-1_1-CCFD</containerId>
       <releaseId>
         <groupId>dev.ruivieira</groupId>
         <artifactId>ccd-standard-kjar</artifactId>
